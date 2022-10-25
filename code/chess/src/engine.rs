@@ -94,8 +94,6 @@ impl Engine {
     pub fn make_move(&mut self, mv : &str ) {
         self.moves = format!("{} {}", self.moves, mv);
         self.command(&format!("position startpos {}", self.moves)).unwrap();
-        self.is_ready();
-
     }
 
     fn init_uci(&mut self) -> io::Result<()> {
